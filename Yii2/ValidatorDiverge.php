@@ -3,7 +3,7 @@
 namespace app\models;
 
 
-class ValidatorDiverge  implements DivergeInterface
+class ValidatorDiverge implements DivergeInterface
 {
     private $allowDiverge = 10;
     private $resultDeviation;
@@ -22,8 +22,13 @@ class ValidatorDiverge  implements DivergeInterface
         $this->out = $out;
         $this->new = $new;
 
-        if (is_null($new) || is_null($out)) return false;
-        if (($new < 0) || ($out < 0)) return false;
+        if (is_null($new) || is_null($out)) {
+            return false;
+        }
+
+        if (($new < 0) || ($out < 0)) {
+            return false;
+        }
 
         if ($this->allowDiverge >= $this->getDeviation()) {
             return true;
