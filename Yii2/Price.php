@@ -11,7 +11,7 @@ class Price extends Model
 {
 
     public $priceOut;
-    public $pricenew;
+    public $priceNew;
 
     /**
      * @return array|array[]
