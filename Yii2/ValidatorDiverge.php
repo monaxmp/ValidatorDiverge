@@ -25,9 +25,7 @@ class ValidatorDiverge  implements DivergeInterface
         if (is_null($new) || is_null($out)) return false;
         if (($new < 0) || ($out < 0)) return false;
 
-        $deviation = $this->getDeviation();
-
-        if ($this->allowDiverge >= $deviation) {
+        if ($this->allowDiverge >= $this->getDeviation()) {
             return true;
         }
 
