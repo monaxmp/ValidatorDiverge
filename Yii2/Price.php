@@ -16,7 +16,7 @@ class Price extends Model
     /**
      * @return array|array[]
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             ['priceNew', 'ValidatorDiverge', 'min' => 0],
@@ -27,7 +27,7 @@ class Price extends Model
     /**
      * @return bool|void
      */
-    public function ValidatorDiverge()
+    public function ValidatorDiverge(): bool
     {
         $ValidatorDiverge = new ValidatorDiverge();
         return $ValidatorDiverge->diffPrice($this->pricenew, $this->priceOut);
